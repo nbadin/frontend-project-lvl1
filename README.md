@@ -5,4 +5,5 @@
 
 [![Actions Status](https://github.com/nbadin/frontend-project-lvl1/actions/workflows/linter.yml/badge.svg)](https://github.com/nbadin/frontend-project-lvl1/actions)
 
+https://asciinema.org/a/0QcU9z24RSNtuHk8xpougGubx
 
