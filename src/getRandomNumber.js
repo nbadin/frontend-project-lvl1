@@ -1,6 +1,2 @@
-export const getRandomNum = () => {
-    const max = 20, 
-        min = 1;
-
-    return Math.floor(Math.random() * (max - min)) + min;
-}
+// eslint-disable-next-line max-len
+export const getRandomNum = (max, min) => Math.floor(Math.random() * (max - min)) + min

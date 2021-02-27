@@ -1,4 +1,4 @@
-import {getRandomNum} from './getRandomNumber.js';
+import {getRandomNum} from '../getRandomNumber.js';
 import readline from 'readline-sync';
 
 const mathOperations = (firstNum, secondNum, operator) => {
@@ -13,14 +13,16 @@ const mathOperations = (firstNum, secondNum, operator) => {
             return null;
     }
 };
+const maxNum = 30;
+const minNum = 1;
 
 export function calcGame(userName) {
     const operations = ['+', '-', '*']
     const rules = 'What is the result of the expression?';
     console.log(rules);
     for (let i = 0; i < 3; i += 1) {
-        const firstNum = getRandomNum();
-        const secondNum = getRandomNum();
+        const firstNum = getRandomNum(maxNum, minNum);
+        const secondNum = getRandomNum(maxNum, minNum);
         const correctAnswer = mathOperations(firstNum, secondNum, operations[i]);
         console.log(`Question: ${firstNum} ${operations[i]} ${secondNum}`);
         const userAnswer = readline.question('Your answer: ');
