@@ -1,6 +1,7 @@
 #!/usr/bin/env node
-import {greeting} from '../src/cli.js';
-import {calcGame} from '../src/Game/calc.js';
+/* eslint-disable import/extensions */
+import { greeting } from '../src/cli.js';
+import { calcGame } from '../src/Game/calc.js';
 
 const userName = greeting();
 calcGame(userName);

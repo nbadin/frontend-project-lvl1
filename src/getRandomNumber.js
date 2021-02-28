@@ -1,2 +1,3 @@
 // eslint-disable-next-line max-len
-export const getRandomNum = (max, min) => Math.floor(Math.random() * (max - min)) + min
+// eslint-disable-next-line import/prefer-default-export
+export const getRandomNum = (max, min) => Math.floor(Math.random() * (max - min)) + min;
