@@ -2,7 +2,7 @@
   "name": "@hexlet/code",
   "version": "1.0.0",
   "type": "module",
-  "description": "[![Actions Status](https://github.com/nbadin/frontend-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/nbadin/frontend-project-lvl1/actions)",
+  "description": "console-game-Brain-games",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -25,6 +25,12 @@
     "brain-progression": "bin/brain-progression.js",
     "brain-prime": "bin/brain-prime.js"
   },
+  "keywords": [
+    "game",
+    "console game",
+    "hexlet priject",
+    "project"
+  ],
   "dependencies": {
     "readline-sync": "^1.4.10"
   },

@@ -1,7 +1,4 @@
 #!/usr/bin/env node
-/* eslint-disable import/extensions */
-import { greeting } from '../src/cli.js';
-import { progressionGame } from '../src/Game/progression.js';
+import progressionGame from '../src/game/progression.js';
 
-const userName = greeting();
-progressionGame(userName);
+progressionGame();
