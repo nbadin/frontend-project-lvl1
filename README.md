@@ -5,8 +5,8 @@
 
 [![Actions Status](https://github.com/nbadin/frontend-project-lvl1/actions/workflows/linter.yml/badge.svg)](https://github.com/nbadin/frontend-project-lvl1/actions)
 
-[brain-even](https://asciinema.org/a/0QcU9z24RSNtuHk8xpougGubx)
-[brain-calc](https://asciinema.org/a/sQYW9CQ3SISkWje7CRpE4JVlK)
-[brain-gcd](https://asciinema.org/a/VUiWwoOHfgJCrj1EpX5RtzdGZ)
-[brain-progression](https://asciinema.org/a/SvgFOB1568OimV1SVsFmUiFhj)
-[brain-prime](https://asciinema.org/a/FGhChAQxswSTklvukgH4f0mex)
+[![asciicast](https://asciinema.org/a/0QcU9z24RSNtuHk8xpougGubx.svg)](https://asciinema.org/a/0QcU9z24RSNtuHk8xpougGubx)
+[![asciicast](https://asciinema.org/a/sQYW9CQ3SISkWje7CRpE4JVlK.svg)](https://asciinema.org/a/sQYW9CQ3SISkWje7CRpE4JVlK)
+[![asciicast](https://asciinema.org/a/VUiWwoOHfgJCrj1EpX5RtzdGZ.svg)](https://asciinema.org/a/VUiWwoOHfgJCrj1EpX5RtzdGZ)
+[![asciicast](https://asciinema.org/a/SvgFOB1568OimV1SVsFmUiFhj.svg)](https://asciinema.org/a/SvgFOB1568OimV1SVsFmUiFhj)
+[![asciicast](https://asciinema.org/a/FGhChAQxswSTklvukgH4f0mex.svg)](https://asciinema.org/a/FGhChAQxswSTklvukgH4f0mex)
