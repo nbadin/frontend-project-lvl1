@@ -1,20 +1,24 @@
-import getRandomNum from '../getRandomNumber.js';
-import playGame from '../index.js';
+import generateNumber from '../utils/generateNumber.js';
+import runGame, { roundCount } from '../index.js';
 
 const isEven = (num) => num % 2 === 0;
 
 const getTasksAndAnswers = () => {
-  const taskAndAnswer = [];
-  for (let i = 0; i < 3; i += 1) {
-    const task = getRandomNum(99, 1);
-    const answer = isEven(task) ? 'yes' : 'no';
-    taskAndAnswer.push(task);
-    taskAndAnswer.push(answer);
-  }
-  return taskAndAnswer;
+  const minNumber = 1;
+  const maxNumber = 200;
+  const task = generateNumber(minNumber, maxNumber);
+  const answer = isEven(task) ? 'yes' : 'no';
+  const questionAndAnswerForOneRound = [task, answer];
+
+  return questionAndAnswerForOneRound;
 };
 
 export default () => {
+  const tasksAndAnswers = [];
+  for (let i = 0; i < roundCount; i += 1) {
+    tasksAndAnswers.push(getTasksAndAnswers());
+  }
+
   const rules = 'Answer "yes" if the number is even, otherwise answer "no"';
-  playGame(rules, getTasksAndAnswers());
+  runGame(rules, tasksAndAnswers);
 };

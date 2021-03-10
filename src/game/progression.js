@@ -1,32 +1,36 @@
-import getRandomNum from '../getRandomNumber.js';
-import playGame from '../index.js';
+import generateNumber from '../utils/generateNumber.js';
+import runGame, { roundCount } from '../index.js';
 
 const getRandomProgression = () => {
-  const progressionSize = getRandomNum(15, 5);
-  const firstNumber = getRandomNum(10, 0);
-  const step = getRandomNum(10, 1);
+  const minProgressionNumber = 1;
+  const maxProgressionNumber = 15;
+  const progressionLength = 10;
+  const firstNumber = generateNumber(minProgressionNumber, maxProgressionNumber);
+  const step = generateNumber(minProgressionNumber, maxProgressionNumber);
   const result = [];
-  for (let i = 0; i < progressionSize; i += 1) {
+  for (let i = 0; i < progressionLength; i += 1) {
     result.push(firstNumber + (step * i));
   }
   return result;
 };
 
 const getTasksAndAnswers = () => {
-  const taskAndAnswer = [];
-  for (let i = 0; i < 3; i += 1) {
-    const progression = getRandomProgression();
-    const indexOfMissedNum = getRandomNum(0, progression.length - 1);
-    const answer = String(progression[indexOfMissedNum]);
-    progression[indexOfMissedNum] = '..';
-    const task = progression.join(' ');
-    taskAndAnswer.push(task);
-    taskAndAnswer.push(answer);
-  }
-  return taskAndAnswer;
+  const progression = getRandomProgression();
+  const indexOfMissedNum = generateNumber(0, progression.length - 1);
+  const answer = String(progression[indexOfMissedNum]);
+  progression[indexOfMissedNum] = '..';
+  const task = progression.join(' ');
+  const questionAndAnswerForOneRound = [task, answer];
+
+  return questionAndAnswerForOneRound;
 };
 
 export default () => {
+  const tasksAndAnswers = [];
+  for (let i = 0; i < roundCount; i += 1) {
+    tasksAndAnswers.push(getTasksAndAnswers());
+  }
+
   const rules = 'What number is missing in the progression?';
-  playGame(rules, getTasksAndAnswers());
+  runGame(rules, tasksAndAnswers);
 };

@@ -1,24 +1,23 @@
 import readline from 'readline-sync';
-import greeting from './cli.js';
 
-export default (rules, playRound) => {
-  const userName = greeting();
+export const roundCount = 3;
+
+export default (rules, data) => {
+  const userName = readline.question('May I have your name? ');
   console.log(rules);
-  let rounds = 3;
-  for (let i = 0; i < rounds; rounds -= 1) {
-    const taskAndAnswer = playRound;
-    const task = taskAndAnswer.shift();
-    const correctAnswer = taskAndAnswer.shift();
-    console.log(`Question: ${task}`);
+  const questionsAndAnswers = data;
+
+  // eslint-disable-next-line no-restricted-syntax
+  for (const [question, correctAnswer] of questionsAndAnswers) {
+    console.log(`Question: ${question}`);
     const userAnswer = readline.question('Your answer: ');
-    if (userAnswer === correctAnswer) {
-      console.log('Correct!');
-      // eslint-disable-next-line no-unused-vars
-    } else {
-      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
-      console.log(`Let's try again, ${userName}!`);
-      break;
+
+    if (userAnswer !== correctAnswer) {
+      return console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\nLet's try again, ${userName}!`);
     }
+
+    console.log('Correct!');
   }
-  return rounds === 0 ? console.log(`Congratulations, ${userName}!`) : undefined;
+
+  return console.log(`Congratulations, ${userName}!`);
 };

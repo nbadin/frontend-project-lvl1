@@ -1,10 +1,10 @@
-import getRandomNum from '../getRandomNumber.js';
-import playGame from '../index.js';
+import generateNumber from '../utils/generateNumber.js';
+import runGame, { roundCount } from '../index.js';
 
-const gcd = (firstnum, secondNum) => {
-  let divider = secondNum;
+const gcd = (firstNumber, secondNumber) => {
+  let divider = secondNumber;
   while (divider > 0) {
-    if (firstnum % divider === 0 && secondNum % divider === 0) {
+    if (firstNumber % divider === 0 && secondNumber % divider === 0) {
       return divider;
     }
     divider -= 1;
@@ -13,19 +13,23 @@ const gcd = (firstnum, secondNum) => {
 };
 
 const getTasksAndAnswers = () => {
-  const taskAndAnswer = [];
-  for (let i = 0; i < 3; i += 1) {
-    const firstNum = getRandomNum(50);
-    const secondNum = getRandomNum(50);
-    const task = `${firstNum} ${secondNum}`;
-    const answer = String(gcd(firstNum, secondNum));
-    taskAndAnswer.push(task);
-    taskAndAnswer.push(answer);
-  }
-  return taskAndAnswer;
+  const minNumber = 1;
+  const maxNumber = 50;
+  const firstNum = generateNumber(minNumber, maxNumber);
+  const secondNum = generateNumber(minNumber, maxNumber);
+  const task = `${firstNum} ${secondNum}`;
+  const answer = String(gcd(firstNum, secondNum));
+  const questionAndAnswerForOneRound = [task, answer];
+
+  return questionAndAnswerForOneRound;
 };
 
 export default () => {
+  const tasksAndAnswers = [];
+  for (let i = 0; i < roundCount; i += 1) {
+    tasksAndAnswers.push(getTasksAndAnswers());
+  }
+
   const rules = 'Find the greatest common divisor of given numbers.';
-  playGame(rules, getTasksAndAnswers());
+  runGame(rules, tasksAndAnswers);
 };

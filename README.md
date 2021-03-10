@@ -1,9 +1,5 @@
 ### Hexlet tests and linter status:
-[![Actions Status](https://github.com/nbadin/frontend-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/nbadin/frontend-project-lvl1/actions)
-
-[![Action Status](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github/codeclimate/codeclimate/maintainability)
-
-[![Actions Status](https://github.com/nbadin/frontend-project-lvl1/actions/workflows/linter.yml/badge.svg)](https://github.com/nbadin/frontend-project-lvl1/actions)
+[![Actions Status](https://github.com/nbadin/frontend-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/nbadin/frontend-project-lvl1/actions)  [![Action Status](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github/codeclimate/codeclimate/maintainability)  [![Actions Status](https://github.com/nbadin/frontend-project-lvl1/actions/workflows/linter.yml/badge.svg)](https://github.com/nbadin/frontend-project-lvl1/actions)
 
 ### Install
 1. Install the latest Node.js to the system globally
@@ -11,33 +7,37 @@
 1. Install dependencies ** make install **
 1. Run the game
 
+### brain-games
+$ brain-games
+[![asciicast](https://asciinema.org/a/yxOyUdXy0DCnPisGjGrN3gLmR.svg)](https://asciinema.org/a/yxOyUdXy0DCnPisGjGrN3gLmR)
+
 #### brain-even
 ```
 $ brain-even
 ```
-[![asciicast](https://asciinema.org/a/0QcU9z24RSNtuHk8xpougGubx.svg)](https://asciinema.org/a/0QcU9z24RSNtuHk8xpougGubx)
+[![asciicast](https://asciinema.org/a/odbkwBO3BuVUS6WOhnpOUdTte.svg)](https://asciinema.org/a/odbkwBO3BuVUS6WOhnpOUdTte))
 
 #### brain-calc
 ```
 $ brain-calc
 ```
-[![asciicast](https://asciinema.org/a/sQYW9CQ3SISkWje7CRpE4JVlK.svg)](https://asciinema.org/a/sQYW9CQ3SISkWje7CRpE4JVlK)
+[![asciicast](https://asciinema.org/a/01LLbFRxlgqvjBog1htVyaRo4.svg)](https://asciinema.org/a/01LLbFRxlgqvjBog1htVyaRo4)
 
 #### brain-gcd
 ```
 $ brain-gcd
 ```
-[![asciicast](https://asciinema.org/a/VUiWwoOHfgJCrj1EpX5RtzdGZ.svg)](https://asciinema.org/a/VUiWwoOHfgJCrj1EpX5RtzdGZ)
+[![asciicast](https://asciinema.org/a/fnFOSHEh8OCkMhTYFBwsXJFSH.svg)](https://asciinema.org/a/fnFOSHEh8OCkMhTYFBwsXJFSH)
 
 #### brain-progression
 ```
 $ brain-progression
 ```
-[![asciicast](https://asciinema.org/a/SvgFOB1568OimV1SVsFmUiFhj.svg)](https://asciinema.org/a/SvgFOB1568OimV1SVsFmUiFhj)
+[![asciicast](https://asciinema.org/a/CHVAFPWINlJKwkQVpnBTXlbPO.svg)](https://asciinema.org/a/CHVAFPWINlJKwkQVpnBTXlbPO)
 
 #### brain-prime
 ```
 $ brain-prime
 ```
-[![asciicast](https://asciinema.org/a/FGhChAQxswSTklvukgH4f0mex.svg)](https://asciinema.org/a/FGhChAQxswSTklvukgH4f0mex)
+[![asciicast](https://asciinema.org/a/PoE782QdOdbrSNAPmUrweAZyt.svg)](https://asciinema.org/a/PoE782QdOdbrSNAPmUrweAZyt)
 

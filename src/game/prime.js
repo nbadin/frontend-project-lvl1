@@ -1,5 +1,5 @@
-import getRandomNum from '../getRandomNumber.js';
-import playGame from '../index.js';
+import generateNumber from '../utils/generateNumber.js';
+import runGame, { roundCount } from '../index.js';
 
 const isPrime = (num) => {
   if (num <= 1) {
@@ -14,17 +14,21 @@ const isPrime = (num) => {
 };
 
 const getTasksAndAnswers = () => {
-  const taskAndAnswer = [];
-  for (let i = 0; i < 3; i += 1) {
-    const task = getRandomNum(120, 1);
-    const answer = isPrime(task) ? 'yes' : 'no';
-    taskAndAnswer.push(task);
-    taskAndAnswer.push(answer);
-  }
-  return taskAndAnswer;
+  const minNumber = 1;
+  const maxNumber = 120;
+  const task = String(generateNumber(minNumber, maxNumber));
+  const answer = isPrime(task) ? 'yes' : 'no';
+  const questionAndAnswerForOneRound = [task, answer];
+
+  return questionAndAnswerForOneRound;
 };
 
 export default () => {
+  const tasksAndAnswers = [];
+  for (let i = 0; i < roundCount; i += 1) {
+    tasksAndAnswers.push(getTasksAndAnswers());
+  }
+
   const rules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
-  playGame(rules, getTasksAndAnswers());
+  runGame(rules, tasksAndAnswers);
 };
