@@ -1,5 +1,5 @@
 ### Hexlet tests and linter status:
-[![Actions Status](https://github.com/nbadin/frontend-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/nbadin/frontend-project-lvl1/actions)  [![Action Status](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github/codeclimate/codeclimate/maintainability)  [![Actions Status](https://github.com/nbadin/frontend-project-lvl1/actions/workflows/linter.yml/badge.svg)](https://github.com/nbadin/frontend-project-lvl1/actions)
+[![Actions Status](https://github.com/nbadin/frontend-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/nbadin/frontend-project-lvl1/actions)  [![Maintainability](https://api.codeclimate.com/v1/badges/85e0fca1725a28e46089/maintainability)](https://codeclimate.com/github/nbadin/frontend-project-lvl1/maintainability)  [![Actions Status](https://github.com/nbadin/frontend-project-lvl1/actions/workflows/linter.yml/badge.svg)](https://github.com/nbadin/frontend-project-lvl1/actions)
 
 ### Install
 1. Install the latest Node.js to the system globally
@@ -8,7 +8,9 @@
 1. Run the game
 
 ### brain-games
+```
 $ brain-games
+```
 [![asciicast](https://asciinema.org/a/yxOyUdXy0DCnPisGjGrN3gLmR.svg)](https://asciinema.org/a/yxOyUdXy0DCnPisGjGrN3gLmR)
 
 #### brain-even
