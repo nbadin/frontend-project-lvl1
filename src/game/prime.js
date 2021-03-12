@@ -15,24 +15,23 @@ const isPrime = (num) => {
   return true;
 };
 
-const generateQuestionAndAnswer = () => {
+const generateRound = () => {
   const minNumber = 1;
   const maxNumber = 120;
-  const task = String(generateNumber(minNumber, maxNumber));
-  const answer = isPrime(task) ? 'yes' : 'no';
-  const questionAndAnswerForOneRound = [task, answer];
+  const question = String(generateNumber(minNumber, maxNumber));
+  const answer = isPrime(question) ? 'yes' : 'no';
+  const dataForRound = [question, answer];
 
-  return questionAndAnswerForOneRound;
+  return dataForRound;
 };
 
 export default () => {
-  const tasksAndAnswers = [];
+  const questionsAndAnswers = [];
 
   for (let i = 0; i < roundCount; i += 1) {
-    tasksAndAnswers.push(generateQuestionAndAnswer());
+    questionsAndAnswers.push(generateRound());
   }
 
   const rules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
-
-  runGame(rules, tasksAndAnswers);
+  runGame(rules, questionsAndAnswers);
 };

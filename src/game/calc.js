@@ -5,13 +5,10 @@ const resultOfMathOperation = (firstNum, secondNum, operator) => {
   switch (operator) {
     case '+':
       return firstNum + secondNum;
-
     case '-':
       return firstNum - secondNum;
-
     case '*':
       return firstNum * secondNum;
-
     default:
       throw new Error('Unknown operation!');
   }
@@ -19,28 +16,27 @@ const resultOfMathOperation = (firstNum, secondNum, operator) => {
 
 const mathOperations = ['+', '-', '*'];
 
-const generateQuestionAndAnswer = () => {
+const generateRound = () => {
   const minNumber = 1;
   const maxNumber = 100;
   const firstNum = generateNumber(minNumber, maxNumber);
   const secondNum = generateNumber(minNumber, maxNumber);
   const indexOfOperation = generateNumber(0, (mathOperations.length - 1));
   const operation = mathOperations[indexOfOperation];
-  const task = `${firstNum} ${operation} ${secondNum}`;
+  const question = `${firstNum} ${operation} ${secondNum}`;
   const answer = String(resultOfMathOperation(firstNum, secondNum, operation));
-  const questionAndAnswerForOneRound = [task, answer];
+  const dataForRound = [question, answer];
 
-  return questionAndAnswerForOneRound;
+  return dataForRound;
 };
 
 export default () => {
-  const tasksAndAnswers = [];
+  const questionsAndAnswers = [];
 
   for (let i = 0; i < roundCount; i += 1) {
-    tasksAndAnswers.push(generateQuestionAndAnswer());
+    questionsAndAnswers.push(generateRound());
   }
 
   const rules = 'What is the result of the expression?';
-
-  runGame(rules, tasksAndAnswers);
+  runGame(rules, questionsAndAnswers);
 };

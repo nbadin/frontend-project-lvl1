@@ -1,40 +1,35 @@
 import generateNumber from '../utils/generateNumber.js';
 import runGame, { roundCount } from '../index.js';
 
-const generateRandomProgression = () => {
-  const minProgressionNumber = 1;
-  const maxProgressionNumber = 15;
-  const progressionLength = 10;
-  const firstNumber = generateNumber(minProgressionNumber, maxProgressionNumber);
-  const step = generateNumber(minProgressionNumber, maxProgressionNumber);
-  const result = [];
-
-  for (let i = 0; i < progressionLength; i += 1) {
-    result.push(firstNumber + (step * i));
+const getQuestion = (first, step, hiddenNumberIndex) => {
+  const progression = [];
+  for (let i = 0; i < 10; i += 1) {
+    progression.push(first + (step * i));
+    if (i === hiddenNumberIndex) {
+      progression[i] = '..';
+    }
   }
-
-  return result;
+  const question = progression.join(' ');
+  return question;
 };
 
-const generateQuestionAndAnswer = () => {
-  const progression = generateRandomProgression();
-  const indexOfMissedNum = generateNumber(0, progression.length - 1);
-  const answer = String(progression[indexOfMissedNum]);
-  progression[indexOfMissedNum] = '..';
-  const task = progression.join(' ');
-  const questionAndAnswerForOneRound = [task, answer];
+const generateRound = () => {
+  const first = generateNumber(1, 100);
+  const step = generateNumber(1, 10);
+  const hiddenNumberIndex = generateNumber(1, 10);
+  const question = getQuestion(first, step, hiddenNumberIndex);
+  const answer = String(first + (step * hiddenNumberIndex));
 
-  return questionAndAnswerForOneRound;
+  return [question, answer];
 };
 
 export default () => {
-  const tasksAndAnswers = [];
+  const questionsAndAnswers = [];
 
   for (let i = 0; i < roundCount; i += 1) {
-    tasksAndAnswers.push(generateQuestionAndAnswer());
+    questionsAndAnswers.push(generateRound());
   }
 
   const rules = 'What number is missing in the progression?';
-
-  runGame(rules, tasksAndAnswers);
+  runGame(rules, questionsAndAnswers);
 };

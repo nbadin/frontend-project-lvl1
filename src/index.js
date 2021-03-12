@@ -5,10 +5,9 @@ export const roundCount = 3;
 export default (rules, data) => {
   const userName = readline.question('May I have your name? ');
   console.log(rules);
-  const questionsAndAnswers = data;
 
   // eslint-disable-next-line no-restricted-syntax
-  for (const [question, correctAnswer] of questionsAndAnswers) {
+  for (const [question, correctAnswer] of data) {
     console.log(`Question: ${question}`);
     const userAnswer = readline.question('Your answer: ');
 

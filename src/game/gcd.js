@@ -15,26 +15,25 @@ const findGCD = (firstNumber, secondNumber) => {
   return divider;
 };
 
-const generateQuestionAndAnswer = () => {
+const generateRound = () => {
   const minNumber = 1;
   const maxNumber = 50;
   const firstNum = generateNumber(minNumber, maxNumber);
   const secondNum = generateNumber(minNumber, maxNumber);
-  const task = `${firstNum} ${secondNum}`;
+  const question = `${firstNum} ${secondNum}`;
   const answer = String(findGCD(firstNum, secondNum));
-  const questionAndAnswerForOneRound = [task, answer];
+  const dataForRound = [question, answer];
 
-  return questionAndAnswerForOneRound;
+  return dataForRound;
 };
 
 export default () => {
-  const tasksAndAnswers = [];
+  const questionsAndAnswers = [];
 
   for (let i = 0; i < roundCount; i += 1) {
-    tasksAndAnswers.push(generateQuestionAndAnswer());
+    questionsAndAnswers.push(generateRound());
   }
 
   const rules = 'Find the greatest common divisor of given numbers.';
-
-  runGame(rules, tasksAndAnswers);
+  runGame(rules, questionsAndAnswers);
 };
