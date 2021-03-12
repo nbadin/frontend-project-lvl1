@@ -4,19 +4,16 @@ import runGame, { roundCount } from '../index.js';
 const getQuestion = (first, step, hiddenNumberIndex) => {
   const progression = [];
   for (let i = 0; i < 10; i += 1) {
-    progression.push(first + (step * i));
-    if (i === hiddenNumberIndex) {
-      progression[i] = '..';
-    }
+    const element = i === hiddenNumberIndex ? '..' : String(first + i * step);
+    progression.push(element);
   }
-  const question = progression.join(' ');
-  return question;
+  return progression.join(' ');
 };
 
 const generateRound = () => {
   const first = generateNumber(1, 100);
   const step = generateNumber(1, 10);
-  const hiddenNumberIndex = generateNumber(1, 10);
+  const hiddenNumberIndex = generateNumber(0, 10);
   const question = getQuestion(first, step, hiddenNumberIndex);
   const answer = String(first + (step * hiddenNumberIndex));
 
