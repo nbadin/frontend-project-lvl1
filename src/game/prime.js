@@ -20,18 +20,17 @@ const generateRound = () => {
   const maxNumber = 120;
   const question = String(generateNumber(minNumber, maxNumber));
   const answer = isPrime(question) ? 'yes' : 'no';
-  const dataForRound = [question, answer];
 
-  return dataForRound;
+  return [question, answer];
 };
 
 export default () => {
-  const questionsAndAnswers = [];
+  const rounds = [];
 
   for (let i = 0; i < roundCount; i += 1) {
-    questionsAndAnswers.push(generateRound());
+    rounds.push(generateRound());
   }
 
   const rules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
-  runGame(rules, questionsAndAnswers);
+  runGame(rules, rounds);
 };

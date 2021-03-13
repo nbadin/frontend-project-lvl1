@@ -7,19 +7,18 @@ const generateRound = () => {
   const minNumber = 1;
   const maxNumber = 200;
   const question = generateNumber(minNumber, maxNumber);
-  const answer = isEven(question) ? 'yes' : 'no';
-  const dataForRound = [question, answer];
+  const answer = isEven(question) ? 'yes' : 'no';;
 
-  return dataForRound;
+  return [question, answer];
 };
 
 export default () => {
-  const questionsAndAnswers = [];
+  const rounds = [];
 
   for (let i = 0; i < roundCount; i += 1) {
-    questionsAndAnswers.push(generateRound());
+    rounds.push(generateRound());
   }
 
   const rules = 'Answer "yes" if the number is even, otherwise answer "no"';
-  runGame(rules, questionsAndAnswers);
+  runGame(rules, rounds);
 };

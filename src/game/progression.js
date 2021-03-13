@@ -21,12 +21,12 @@ const generateRound = () => {
 };
 
 export default () => {
-  const questionsAndAnswers = [];
+  const rounds = [];
 
   for (let i = 0; i < roundCount; i += 1) {
-    questionsAndAnswers.push(generateRound());
+    rounds.push(generateRound());
   }
 
   const rules = 'What number is missing in the progression?';
-  runGame(rules, questionsAndAnswers);
+  runGame(rules, rounds);
 };

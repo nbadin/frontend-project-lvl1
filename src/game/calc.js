@@ -1,7 +1,7 @@
 import generateNumber from '../utils/generateNumber.js';
 import runGame, { roundCount } from '../index.js';
 
-const resultOfMathOperation = (firstNum, secondNum, operator) => {
+const calculate = (firstNum, secondNum, operator) => {
   switch (operator) {
     case '+':
       return firstNum + secondNum;
@@ -17,26 +17,23 @@ const resultOfMathOperation = (firstNum, secondNum, operator) => {
 const mathOperations = ['+', '-', '*'];
 
 const generateRound = () => {
-  const minNumber = 1;
-  const maxNumber = 100;
-  const firstNum = generateNumber(minNumber, maxNumber);
-  const secondNum = generateNumber(minNumber, maxNumber);
-  const indexOfOperation = generateNumber(0, (mathOperations.length - 1));
-  const operation = mathOperations[indexOfOperation];
-  const question = `${firstNum} ${operation} ${secondNum}`;
-  const answer = String(resultOfMathOperation(firstNum, secondNum, operation));
-  const dataForRound = [question, answer];
+  const firstNum = generateNumber(1, 100);
+  const secondNum = generateNumber(1, 100);
+  const operationIndex = generateNumber(0, (mathOperations.length - 1));
+  const operator = mathOperations[operationIndex];
+  const question = `${firstNum} ${operator} ${secondNum}`;
+  const answer = String(calculate(firstNum, secondNum, operator));
 
-  return dataForRound;
+  return [question, answer];
 };
 
 export default () => {
-  const questionsAndAnswers = [];
+  const rounds = [];
 
   for (let i = 0; i < roundCount; i += 1) {
-    questionsAndAnswers.push(generateRound());
+    rounds.push(generateRound());
   }
 
   const rules = 'What is the result of the expression?';
-  runGame(rules, questionsAndAnswers);
+  runGame(rules, rounds);
 };
