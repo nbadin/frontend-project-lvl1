@@ -13,7 +13,7 @@ const getQuestion = (first, step, hiddenNumberIndex) => {
 const generateRound = () => {
   const first = generateNumber(1, 100);
   const step = generateNumber(1, 10);
-  const hiddenNumberIndex = generateNumber(1, 10);
+  const hiddenNumberIndex = generateNumber(0, 10);
   const question = getQuestion(first, step, hiddenNumberIndex);
   const answer = String(first + step * hiddenNumberIndex);
 
