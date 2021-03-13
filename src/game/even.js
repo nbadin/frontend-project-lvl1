@@ -7,7 +7,7 @@ const generateRound = () => {
   const minNumber = 1;
   const maxNumber = 200;
   const question = generateNumber(minNumber, maxNumber);
-  const answer = isEven(question) ? 'yes' : 'no';;
+  const answer = isEven(question) ? 'yes' : 'no';
 
   return [question, answer];
 };
