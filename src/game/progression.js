@@ -1,9 +1,9 @@
 import generateNumber from '../utils/generateNumber.js';
 import runGame, { roundCount } from '../index.js';
 
-const getQuestion = (first, step, hiddenNumberIndex) => {
+const getQuestion = (first, step, hiddenNumberIndex, progressionLength) => {
   const progression = [];
-  for (let i = 0; i < 10; i += 1) {
+  for (let i = 0; i < progressionLength; i += 1) {
     const element = i === hiddenNumberIndex ? '..' : String(first + (i * step));
     progression.push(element);
   }
@@ -11,10 +11,11 @@ const getQuestion = (first, step, hiddenNumberIndex) => {
 };
 
 const generateRound = () => {
+  const progressionLength = generateNumber(5, 10);
   const first = generateNumber(1, 100);
   const step = generateNumber(1, 10);
-  const hiddenNumberIndex = generateNumber(1, 10);
-  const question = getQuestion(first, step, hiddenNumberIndex);
+  const hiddenNumberIndex = generateNumber(1, progressionLength - 1);
+  const question = getQuestion(first, step, hiddenNumberIndex, progressionLength);
   const answer = String(first + (step * hiddenNumberIndex));
 
   return [question, answer];
