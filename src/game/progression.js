@@ -15,7 +15,7 @@ const generateRound = () => {
   const step = generateNumber(1, 10);
   const hiddenNumberIndex = generateNumber(0, 10);
   const question = getQuestion(first, step, hiddenNumberIndex);
-  const answer = String(first + (step * hiddenNumberIndex));
+  const answer = String(first + step * hiddenNumberIndex);
 
   return [question, answer];
 };
