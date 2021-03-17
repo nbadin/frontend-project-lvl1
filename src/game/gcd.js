@@ -2,7 +2,7 @@ import generateNumber from '../utils/generateNumber.js';
 import runGame, { roundCount } from '../index.js';
 
 const findGCD = (firstNumber, secondNumber) => {
-  let divider = secondNumber;
+  let divider = Math.min(firstNumber, secondNumber);
 
   while (divider > 0) {
     if (firstNumber % divider === 0 && secondNumber % divider === 0) {
@@ -16,10 +16,8 @@ const findGCD = (firstNumber, secondNumber) => {
 };
 
 const generateRound = () => {
-  const minNumber = 1;
-  const maxNumber = 50;
-  const firstNum = generateNumber(minNumber, maxNumber);
-  const secondNum = generateNumber(minNumber, maxNumber);
+  const firstNum = generateNumber(2, 50);
+  const secondNum = generateNumber(2, 50);
   const question = `${firstNum} ${secondNum}`;
   const answer = String(findGCD(firstNum, secondNum));
 

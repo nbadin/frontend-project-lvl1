@@ -12,11 +12,12 @@ export default (rules, data) => {
     const userAnswer = readline.question('Your answer: ');
 
     if (userAnswer !== correctAnswer) {
-      return console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\nLet's try again, ${userName}!`);
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\nLet's try again, ${userName}!`);
+      return;
     }
 
     console.log('Correct!');
   }
 
-  return console.log(`Congratulations, ${userName}!`);
+  console.log(`Congratulations, ${userName}!`);
 };
